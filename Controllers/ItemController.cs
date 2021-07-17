@@ -11,7 +11,7 @@ namespace InAndOut.Controllers
     public class ItemController : Controller
     {
         private readonly ApplicationDbContext _db;
-        private ItemController(ApplicationDbContext db)
+        public ItemController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -19,6 +19,10 @@ namespace InAndOut.Controllers
         {
             IEnumerable<Item> objList = _db.Items;
             return View(objList);
+        }
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
