@@ -24,5 +24,9 @@ namespace InAndOut.Controllers
         {
             return View();
         }
-    }
+    //    public IActionResult Create(int id)
+    //    {
+    //        return View();
+    //    }
+   }
 }
