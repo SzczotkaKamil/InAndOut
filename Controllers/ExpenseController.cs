@@ -30,7 +30,15 @@ namespace InAndOut.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Expense obj)
+        {
+            _db.Expenses.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-      
+
     }
 }
