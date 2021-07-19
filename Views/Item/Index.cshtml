@@ -8,7 +8,7 @@
         <a asp-controller="Item" asp-action="Create"class="btn btn-primary">Create new Item</a> 
     </div>
     @if (Model.Count() > 0) {
-        <table>
+        <table class="table table-bordered table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Item Name</th>
@@ -27,6 +27,7 @@
                 </tr>
 
                }
+
                 
 
                 
