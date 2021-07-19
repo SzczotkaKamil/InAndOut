@@ -22,11 +22,13 @@ namespace InAndOut.Controllers
         public IActionResult Index()
         {
             IEnumerable<Expense> objList = _db.Expenses;
+            
             return View(objList);
         }
         // GET: Expenses/Create
         public IActionResult Create()
         {
+            
             return View();
         }
 
@@ -34,10 +36,17 @@ namespace InAndOut.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Expense obj)
         {
-            _db.Expenses.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.Expenses.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            return View(obj);
+
         }
+
 
 
     }

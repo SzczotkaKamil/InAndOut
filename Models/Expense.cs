@@ -12,9 +12,11 @@ namespace InAndOut.Models
         [Key]
         public int Id { get; set; }
         [DisplayName("Item Name")]
+        [Required]
         public string ItemName { get; set; }
+        [Required]
         [DisplayName("Item Value")]
-        public string ItemValue { get; set; }
+        public int ItemValue { get; set; }
 
     }
 }
