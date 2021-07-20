@@ -27,8 +27,7 @@ namespace InAndOut.Controllers
         }
         // GET: Expenses/Create
         public IActionResult Create()
-        {
-            
+        { 
             return View();
         }
 
@@ -46,8 +45,8 @@ namespace InAndOut.Controllers
             return View(obj);
 
         }
-        
-        [ValidateAntiForgeryToken]
+        //Get delete
+     
         public IActionResult Delete(int? id)
         {
             
@@ -56,14 +55,14 @@ namespace InAndOut.Controllers
                 return NotFound();
             }
             var obj = _db.Expenses.Find(id);
-            if (obj==null)
+            if (obj == null)
             {
                 return NotFound();
             }
             return View(obj);
 
         }
-
+        // Post Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
